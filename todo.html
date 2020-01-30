@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/todo.css">
+  <link href="https://fonts.googleapis.com/css?family=Amaranth|Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="todo">
+      <form class="todo__form" action="" onsubmit="add_todo()" target="invisible">
+        <h3 class="form__title">Todos</h3>
+        <input placeholder="Type your task" class="form__input" type="text">
+      </form>
+      <div class="todo__content">
+        <iframe src="" name="invisible" class="form__target" frameborder="0"></iframe>
+        <ul id="js-list" class="todo__list">
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/todo.js"></script>
+
+</html>

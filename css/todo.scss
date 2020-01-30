@@ -1,0 +1,118 @@
+@import "variable";
+@import "base";
+@import "mixin";
+
+%border-none {
+  border: 0;
+}
+
+%display-none {
+  display: none;
+}
+
+.wrapper {
+  @include flex(row, flex-start, center);
+  width: 100vw;
+  height: 100vh;
+  min-width: 1024px;
+  background-color: $bg-color;
+}
+
+.todo {
+  width: 50%;
+  border-radius: 5px;
+  @include flex(column, center);
+  box-shadow: 2px 2px 12px -2px rgba($color: #000000, $alpha: 0.3);
+  margin: $space-size;
+}
+
+.todo__form {
+  width: 100%;
+  background-image: url("https://i.pinimg.com/originals/b7/4e/ec/b74eec06983f750ad19d2cf8437b542a.png");
+  background-size: cover;
+  padding: $space-size;
+  @include flex(column, center);
+}
+
+.form__title {
+  color: $primary-color;
+  @include font($title-size, none);
+  width: 100%;
+  text-align: center;
+}
+
+.form__input {
+  width: 80%;
+  @include font($font-size);
+  padding: $space-size 54px;
+  color: $font-light-color;
+  @extend %border-none;
+  border-radius: 50px;
+  box-shadow: 2px 2px 12px -2px rgba($color: #000000, $alpha: 0.3);
+  margin-top: 15px;
+}
+
+.todo__content {
+  width: 100%;
+  @include flex(column, center);
+  background-color: #fff;
+  padding: $space-size;
+}
+
+.todo__list {
+  width: 100%;
+  @include flex(column, center);
+}
+
+.list__item {
+  width: 95%;
+  color: $font-light-color;
+  @include flex(row, center, space-between);
+  @include font($font-size);
+  padding: $space-size;
+  margin: $space-size 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-left: 20px solid $primary-color;
+  background-color: #fff;
+  box-shadow: 2px 2px 12px -2px rgba($color: #000000, $alpha: 0.3);
+}
+
+.list__left {
+  @include flex(row, center);
+}
+
+.list__right {
+  @include flex(row, center);
+}
+
+.list__box {
+  @extend %display-none;
+}
+
+.box__pic {
+  @include icon-size(24px, 24px);
+  background-image: url($pic_unchecked);
+  background-repeat: no-repeat;
+  margin-right: 15px;
+}
+
+.list__box:checked + .box__pic {
+  background-image: url($pic_checked);
+  background-repeat: no-repeat;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.list__delete {
+  @include icon-size(24px, 24px);
+  @extend %border-none;
+  background-image: url($pic_delete);
+  background-color: transparent;
+}
+
+.form__target {
+  @extend %display-none;
+}

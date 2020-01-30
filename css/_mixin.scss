@@ -1,0 +1,27 @@
+@import "variable";
+
+@mixin flex($direction: row, $align: flex-start, $justify: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin icon-size($width: 24px, $height: 24px) {
+  width: $width;
+  height: $height;
+}
+
+@mixin border($width: 1px, $style: solid, $color: #ececec) {
+  border: $width $style $color;
+}
+
+@mixin border-top($width: 1px, $style: solid, $color: #ececec) {
+  border-top: $width $style $color;
+}
+
+@mixin font($size: 24px, $height: 24px) {
+  font-size: $size;
+  line-height: $height;
+}
